@@ -1,0 +1,24 @@
+<header class="w-full bg-gray-900 text-white py-4 px-6 flex items-center justify-between">
+  <h1 class="text-xl font-bold">Video Share</h1>
+
+  <div class="flex items-center gap-4" *ngIf="!authService.isLoggedIn()">
+    <button
+      class="px-4 py-2 rounded border border-white hover:bg-white hover:text-gray-900"
+      (click)="goToLogin()">
+      Login
+    </button>
+    <button
+      class="px-4 py-2 rounded bg-blue-600 hover:bg-blue-700"
+      (click)="goToSignup()">
+      Sign Up
+    </button>
+  </div>
+
+  <div class="flex items-center gap-4" *ngIf="authService.isLoggedIn()">
+    <button
+      class="px-4 py-2 rounded border border-white hover:bg-white hover:text-gray-900"
+      (click)="onLogoutClick()">
+      Logout
+    </button>
+  </div>
+</header>
