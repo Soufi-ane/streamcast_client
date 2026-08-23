@@ -46,4 +46,17 @@ export class AuthService {
     );
   }
 
+  login(payload: LoginPayload): Observable<AuthResponse> {
+    return this.http.post<AuthResponse>(
+      `${this.baseUrl}/login`,
+      payload,
+      { withCredentials: true }
+    ).pipe(
+      tap(res => {
+        this.isLoggedIn.set(true);
+        this.currentUser.set(res.user);
+      })
+    );
+  }
+
 }
