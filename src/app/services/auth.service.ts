@@ -71,4 +71,22 @@ export class AuthService {
       })
     );
   }
+
+  checkAuth(): Observable<boolean> {
+    return this.http.get<AuthResponse>(
+      `${this.baseUrl}/auth`,
+      { withCredentials: true }
+    ).pipe(
+      tap(res => {
+        this.isLoggedIn.set(true);
+        this.currentUser.set(res.user);
+      }),
+      map(() => true),
+      catchError(() => {
+        this.isLoggedIn.set(false);
+        this.currentUser.set(null);
+        return of(false);
+      })
+    );
+  }
 }
