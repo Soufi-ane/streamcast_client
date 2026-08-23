@@ -1,0 +1,22 @@
+<aside class="w-64 bg-gray-50 border-r border-gray-200 p-4">
+  <nav class="flex flex-col gap-2">
+    <a
+      routerLink="/studio"
+      routerLinkActive="bg-gray-200 font-semibold"
+      class="flex items-center px-4 py-2.5 rounded-lg text-gray-700 hover:bg-gray-200 transition-colors">
+      Studio
+    </a>
+    <a
+      href="#"
+      (click)="$event.preventDefault()"
+      class="flex items-center px-4 py-2.5 rounded-lg text-gray-700 hover:bg-gray-200 transition-colors">
+      Liked Videos
+    </a>
+    <a
+      href="#"
+      (click)="$event.preventDefault()"
+      class="flex items-center px-4 py-2.5 rounded-lg text-gray-700 hover:bg-gray-200 transition-colors">
+      History
+    </a>
+  </nav>
+</aside>
