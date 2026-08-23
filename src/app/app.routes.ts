@@ -6,5 +6,6 @@ import { StudioComponent } from './components/studio/studio.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'signup', component: SignupComponent },
   { path: '**', redirectTo: '' }
 ];
